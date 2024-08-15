@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4e8ff; /* Light purple background */
+  background-image: url('/images/bg2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif; /* Disney-like font */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(232, 225, 225, 0.2);
+}
+
+.input-field {
+  padding: 12px;
+  border: 2px solid #ff6b6b; /* Bright coral border */
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #fff7e6; /* Light yellow background */
+  color: #333;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #4e89ae; /* Bright blue on focus */
+  box-shadow: 0 0 10px rgba(78, 137, 174, 0.5);
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background-color: #43c6ac; /* Bright teal background */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.google-button:hover {
+  background-color: #3a9e8c; /* Darker teal on hover */
+  transform: scale(1.05); /* Slight grow effect on hover */
+}
+
+/* Add some Disney-inspired decorative elements */
+.login-form::before,
+.login-form::after {
+  content: '✨';
+  font-size: 24px;
+  position: absolute;
+  color: #ffd700; /* Gold color for stars */
+}
+
+.login-form::before {
+  top: -15px;
+  left: -15px;
+}
+
+.login-form::after {
+  bottom: -15px;
+  right: -15px;
+}
+
+.h1,
+.h2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black ;
+}

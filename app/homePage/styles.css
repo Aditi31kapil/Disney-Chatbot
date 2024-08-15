@@ -1,0 +1,221 @@
+/* Disney-themed styles.css */
+
+:root {
+  --disney-blue: #0066b3;
+  --disney-red: #f04a5a;
+  --disney-yellow: #f4c31e;
+  --disney-light-blue: #a5d8ff;
+  --disney-purple: #a98ad5;
+  --disney-green: #00b08b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Avenir', 'Helvetica', 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+.background-slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background-slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.background-slideshow img.active {
+  opacity: 1;
+}
+
+.chat-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(0px);
+}
+
+.chat-container {
+  width: 80vmin;
+  height: 80vmin;
+  max-width: 600px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 30px;
+  box-shadow: 0 0 50px rgba(0, 102, 179, 0.5), 0 0 100px rgba(244, 195, 30, 0.5);
+  overflow: hidden;
+  position: relative;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 50px rgba(0, 102, 179, 0.5), 0 0 100px rgba(244, 195, 30, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 70px rgba(0, 102, 179, 0.7), 0 0 140px rgba(244, 195, 30, 0.7);
+  }
+}
+
+.chat-header {
+  background-color: var(--disney-blue);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.message-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.message {
+  border-radius: 25px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  max-width: 80%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 1.1em;
+  line-height: 1.4;
+  animation: messageAppear 0.5s ease-out;
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message.assistant {
+  background-color: var(--disney-light-blue);
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+}
+
+.message.user {
+  background-color: var(--disney-yellow);
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+}
+
+.input-container {
+  background-color: rgba(240, 248, 255, 0.9);
+  padding: 20px;
+  border-top: 3px solid var(--disney-blue);
+}
+
+.MuiTextField-root {
+  background-color: white;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 25px;
+}
+
+.MuiButton-contained {
+  background-color: var(--disney-green) !important;
+  border-radius: 25px !important;
+  font-weight: bold !important;
+  text-transform: none !important;
+  transition: all 0.3s ease !important;
+  padding: 10px 20px !important;
+  font-size: 1.1em !important;
+}
+
+.MuiButton-contained:hover {
+  background-color: var(--disney-blue) !important;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 102, 179, 0.4);
+}
+
+/* Disney-inspired scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--disney-light-blue);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--disney-blue);
+  border-radius: 10px;
+  border: 3px solid var(--disney-light-blue);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--disney-purple);
+}
+
+/* Disney magic sparkle animation */
+@keyframes sparkle {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+  100% { transform: scale(1) rotate(360deg); opacity: 0.5; }
+}
+
+.sparkle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--disney-yellow);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: sparkle 3s infinite;
+}
+
+.sparkle:nth-child(1) { left: 5%; top: 10%; animation-delay: 0s; }
+.sparkle:nth-child(2) { right: 10%; top: 20%; animation-delay: 0.5s; }
+.sparkle:nth-child(3) { left: 15%; bottom: 15%; animation-delay: 1s; }
+.sparkle:nth-child(4) { right: 5%; bottom: 25%; animation-delay: 1.5s; }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .chat-container {
+    width: 95vmin;
+    height: 95vmin;
+  }
+  
+  .chat-header {
+    font-size: 1.5em;
+    padding: 15px;
+  }
+  
+  .message {
+    font-size: 1em;
+  }
+  
+  .MuiButton-contained {
+    font-size: 1em !important;
+  }
+}
