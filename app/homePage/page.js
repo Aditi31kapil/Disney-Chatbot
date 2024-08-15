@@ -1,5 +1,5 @@
 'use client'
-import { Box, Stack, TextField, Button, Typography } from 'next/@mui/material'
+import { Box, Stack, TextField, Button, Typography } from 'next-auth/@mui/material'
 import { useState, useRef, useEffect, useCallback } from 'next-auth/react'
 import './styles.css'
 

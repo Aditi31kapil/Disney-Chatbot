@@ -1,8 +1,8 @@
 'use client'
-import Image from "next/image";
-import { FcGoogle } from "react-icons/fc";
+import Image from "next-auth/image";
+import { FcGoogle } from "next-auth/react-icons/fc";
 import { SessionProvider, signIn, useSession } from "next-auth/react";
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next-auth/navigation';
 import { useEffect, useState } from 'next-auth/react';
 import './login.css'; // Importing CSS file
 
