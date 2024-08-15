@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
 import { SessionProvider, signIn, useSession } from "next-auth/react";
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'next-auth/react';
 import './login.css'; // Importing CSS file
 
 export default function Home() {

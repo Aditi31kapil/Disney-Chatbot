@@ -1,6 +1,6 @@
 'use client'
-import { Box, Stack, TextField, Button, Typography } from '@mui/material'
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { Box, Stack, TextField, Button, Typography } from 'next/@mui/material'
+import { useState, useRef, useEffect, useCallback } from 'next-auth/react'
 import './styles.css'
 
 const INITIAL_MESSAGE = {
